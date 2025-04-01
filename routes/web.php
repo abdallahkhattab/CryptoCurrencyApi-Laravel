@@ -15,9 +15,7 @@ use App\Http\Controllers\CryptoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+return view('welcome');
 });
 
-Route::get('/crypto', [CryptoController::class, 'index'])->name('crypto.index');
-Route::get('/crypto/fetch/{symbol}', [CryptoController::class, 'fetchCrypto'])->name('crypto.fetch');
 
