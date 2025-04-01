@@ -12,7 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cryptos', function (Blueprint $table) {
-       
+            $table->id();
+            $table->string('name');
+            $table->string('symbol')->unique();
+            $table->decimal('price', 20, 8);
+            $table->decimal('market_cap', 20, 2);
+            $table->decimal('percent_change_24h', 10, 2);
+            $table->decimal('ath', 20, 8);
+            $table->decimal('atl', 20, 8);
+            $table->json('chart')->nullable();
+            $table->timestamps();
+    
         });
     }
 
